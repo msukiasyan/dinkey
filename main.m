@@ -1,5 +1,5 @@
 %% Base parameters
-p.gamma         = 0.5;
+p.gamma         = 2;
 p.eta           = .1;
 p.nu            = 0.1;
 p.psi           = 1.0;
