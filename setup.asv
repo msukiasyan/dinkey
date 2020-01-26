@@ -1,0 +1,10 @@
+function pnew   = setup(p)
+    p.grid          = linspace(p.lb, p.ub, p.Ng);
+    p.prob_theta    = normpdf(p.grid, 0, p.sigma_theta);
+    p.prob_theta    = p.prob_theta / sum(p.prob_theta);
+    
+    p.prob_cond     = zeros(p.Ng, p.Ng);
+    for g = 1:p.Ng
+        p.prob_cond(g, :)   = normpdf(p.grid, p.grid(g), p.sigma_eps);
+    end
+end

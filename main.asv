@@ -13,7 +13,7 @@ p.ub            = 5.0;
 p               = setup(p);
 
 %% Solve
-k_star          = fsolve(@(x) resid(p, x), zeros(p.Ng, 1), optimset('Display', 'iter', 'TolFun', 1e-10));
+k_star          = fsolve(@(x) resid(p, x), zeros(p.Ng, 1), optimset('Display', 'iter', 'MaxFunEvals', 150));
 
 %% Plot
 plot(p.grid, k_star);
